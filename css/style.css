@@ -1,0 +1,28 @@
+div.jojo_slideshow {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+/*
+div.jojo_slideshow div {
+  padding: 2px 1%;
+  width: 98%;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  background: #000;
+  color: #fff;
+  opacity: 0.6;
+  -moz-opacity: 0.6;
+  filter:alpha(opacity=60);
+}
+*/
+div.jojo_slideshow img, div.jojo_slideshow span {
+  display: none;
+}
+
+div.jojo_slideshow img.current {
+  display: block;
+}

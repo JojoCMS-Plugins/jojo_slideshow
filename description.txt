@@ -1,0 +1,1 @@
+A javascript / jQuery based image slideshow with optional captions, managed from Jojo.
