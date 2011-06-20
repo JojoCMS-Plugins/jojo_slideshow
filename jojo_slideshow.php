@@ -36,9 +36,10 @@ class JOJO_Plugin_Jojo_slideshow extends JOJO_Plugin
 
         $slideshow = Jojo::selectRow("SELECT * FROM {jojo_slideshow} WHERE name = ? LIMIT 1", array($name));
         if (empty($slideshow['name'])) return false;
-        $smarty->assign('slideshow', $slideshow);
 
         $slideshows = Jojo::selectQuery("SELECT * FROM {jojo_slideshowimage} WHERE slideshowid = ? ORDER BY `displayorder`, `name`", array($slideshow['slideshowid']));
+        $slideshow['count'] = count($slideshows);
+        $smarty->assign('slideshow', $slideshow);
         $smarty->assign('slideshows', $slideshows);
 
         $html = $smarty->fetch('jojo_slideshow.tpl');
