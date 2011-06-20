@@ -29,3 +29,20 @@ $slideshow = array(
                 'icon'=>'images/jojo_slideshow.png'
                 );
 Jojo::addContentVar($slideshow);
+
+$_options[] = array(
+    'id'          => 'slideshow_filter',
+    'category'    => 'Slideshow',
+    'label'       => 'Filter for maps in',
+    'description' => 'The plugin can check for the filter text in templates or body content, or run twice to check both. (force refresh to update the api.txt after changing this option)',
+    'type'        => 'radio',
+    'default'     => 'both',
+    'options'     => 'content,template,both',
+    'plugin'      => 'jojo_slideshow'
+);
+
+
+$slideshow_filter = Jojo::getOption('slideshow_filter');
+/* Map filter */
+if (!$slideshow_filter || $slideshow_filter=='content' || $slideshow_filter=='both') Jojo::addFilter('content', 'applyContentVars', 'jojo_slideshow');
+if (!$slideshow_filter || $slideshow_filter=='template' || $slideshow_filter=='both') Jojo::addFilter('output', 'applyContentVars', 'jojo_slideshow');
