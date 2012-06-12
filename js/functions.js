@@ -1,8 +1,9 @@
 function jojo_slideshow(id,delay,speed) {
   var selector = '#'+id;
-
-  var spantitle = $(selector + ' span:first').attr('title');
-  $(selector + ' span:first').before('<img src="'+$(selector + ' span:first').attr('rel')+'" alt="" title="'+ spantitle +'" />').remove();
+  var spanFirst = $(selector + ' span:first');
+  if (spanFirst.length !== 0) {
+    spanFirst.before('<img src="'+spanFirst.attr('rel')+'" alt="" title="'+ spanFirst.attr('title') +'" />').remove();
+  }
   if ($(selector + ' div').size() == 0) {$(selector).append("<div></div>");}
   if (!delay) {var delay = 5000;}
   if (!speed) {var speed = 1000;}
