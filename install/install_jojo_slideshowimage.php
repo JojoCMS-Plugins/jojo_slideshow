@@ -28,7 +28,7 @@ $query = "
     `displayorder` INT NOT NULL ,
     `url` VARCHAR( 255 ) NOT NULL,
     PRIMARY KEY  (`slideshowimageid`)
-    ) ENGINE = MYISAM ;";
+    ) ENGINE = MYISAM DEFAULT CHARSET=utf8 COLLATE utf8_general_ci  AUTO_INCREMENT=1000 ;";
 
 /* Check table structure */
 $result = Jojo::checkTable($table, $query);

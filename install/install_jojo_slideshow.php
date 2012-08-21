@@ -28,7 +28,7 @@ $query = "
     `delay` VARCHAR( 10 ) NOT NULL ,
     `fadespeed` VARCHAR( 10 ) NOT NULL ,
     PRIMARY KEY  (`slideshowid`)
-    ) ENGINE = MYISAM ;";
+    ) ENGINE = MYISAM DEFAULT CHARSET=utf8 COLLATE utf8_general_ci ;";
 
 /* Check table structure */
 $result = Jojo::checkTable($table, $query);
